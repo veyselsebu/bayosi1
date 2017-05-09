@@ -1,0 +1,77 @@
+﻿@model bayosi.Models.personel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>personel</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.tc_no)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.isim, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.isim)
+                @Html.ValidationMessageFor(model => model.isim)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.soyisim, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.soyisim)
+                @Html.ValidationMessageFor(model => model.soyisim)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.tel_no, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.tel_no)
+                @Html.ValidationMessageFor(model => model.tel_no)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.adres, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.adres)
+                @Html.ValidationMessageFor(model => model.adres)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.meslek_id, "meslek_id", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("meslek_id", String.Empty)
+                @Html.ValidationMessageFor(model => model.meslek_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.resim, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.resim)
+                @Html.ValidationMessageFor(model => model.resim)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

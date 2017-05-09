@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="barinak_otomasyonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="besleme">
+    <Key>
+      <PropertyRef Name="besleme_id" />
+    </Key>
+    <Property Name="besleme_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="personel_tc_no" Type="int" Nullable="false" />
+    <Property Name="mama_id" Type="int" Nullable="false" />
+    <Property Name="tarih" Type="datetime" Nullable="false" />
+    <Property Name="mama_miktarı" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="cikis_sebebi">
+    <Key>
+      <PropertyRef Name="cikis_sebebi_id" />
+    </Key>
+    <Property Name="cikis_sebebi_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cikis_sebebi" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="aciklama" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="gelis_sebebi">
+    <Key>
+      <PropertyRef Name="gelis_sebebi_id" />
+    </Key>
+    <Property Name="gelis_sebebi_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="gelis_sebebi" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="aciklama" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="hayvan">
+    <Key>
+      <PropertyRef Name="kupe_no" />
+    </Key>
+    <Property Name="kupe_no" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tur_id" Type="int" Nullable="false" />
+    <Property Name="ırk_ıd" Type="int" Nullable="false" />
+    <Property Name="gelis_sebebi_id" Type="int" Nullable="false" />
+    <Property Name="cikis_sebebi_id" Type="int" />
+    <Property Name="hayvan_ad" Type="varchar" MaxLength="50" />
+    <Property Name="hayvan_resim" Type="image" />
+    <Property Name="barinak_gelis_tarihi" Type="datetime" Nullable="false" />
+    <Property Name="barinak_cikis_tarihi" Type="datetime" />
+    <Property Name="sahip_isim" Type="varchar" MaxLength="50" />
+    <Property Name="sahip_adress" Type="varchar" MaxLength="250" />
+    <Property Name="sahip_telno" Type="int" />
+  </EntityType>
+  <EntityType Name="ilac">
+    <Key>
+      <PropertyRef Name="ilac_id" />
+    </Key>
+    <Property Name="ilac_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ilac_ad" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="aciklama" Type="nvarchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="irk">
+    <Key>
+      <PropertyRef Name="irk_id" />
+    </Key>
+    <Property Name="irk_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="irk_adi" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tur_id" Type="int" Nullable="false" />
+    <Property Name="irk_aciklama" Type="varchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="kullanici">
+    <Key>
+      <PropertyRef Name="kullaniciAdi" />
+    </Key>
+    <Property Name="kullaniciAdi" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="parola" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tcNo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mama">
+    <Key>
+      <PropertyRef Name="mama_id" />
+    </Key>
+    <Property Name="mama_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mama_adi" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tur_id" Type="int" Nullable="false" />
+    <Property Name="marka" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mesaj">
+    <Key>
+      <PropertyRef Name="mesaj_id" />
+    </Key>
+    <Property Name="mesaj_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mesaj_baslik" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="icerik" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="meslek">
+    <Key>
+      <PropertyRef Name="meslek_id" />
+    </Key>
+    <Property Name="meslek_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="meslek_adi" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="meslek_açiklama" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="personel">
+    <Key>
+      <PropertyRef Name="tc_no" />
+    </Key>
+    <Property Name="tc_no" Type="int" Nullable="false" />
+    <Property Name="isim" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="soyisim" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tel_no" Type="int" Nullable="false" />
+    <Property Name="adres" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="meslek_id" Type="int" Nullable="false" />
+    <Property Name="resim" Type="image" />
+  </EntityType>
+  <EntityType Name="sahiplenme">
+    <Key>
+      <PropertyRef Name="sahiplenme_id" />
+    </Key>
+    <Property Name="sahiplenme_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kupe_no" Type="int" Nullable="false" />
+    <Property Name="sahiplenen_tc" Type="int" Nullable="false" />
+    <Property Name="ad" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="soyad" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ev_tel" Type="int" />
+    <Property Name="cep_tel" Type="int" Nullable="false" />
+    <Property Name="adress" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="sahiplenme_tarihi" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tedavi">
+    <Key>
+      <PropertyRef Name="tedavi_id" />
+    </Key>
+    <Property Name="tedavi_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kupe_no" Type="int" Nullable="false" />
+    <Property Name="personel_tc_no" Type="int" Nullable="false" />
+    <Property Name="ilac_id" Type="int" />
+    <Property Name="doz" Type="int" />
+    <Property Name="aciklama" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="tur">
+    <Key>
+      <PropertyRef Name="tur_id" />
+    </Key>
+    <Property Name="tur_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tur_aciklama" Type="varchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="yonetici">
+    <Key>
+      <PropertyRef Name="yoneticiAd" />
+    </Key>
+    <Property Name="yoneticiAd" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="sifre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="mail" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_besleme_mama">
+    <End Role="mama" Type="Self.mama" Multiplicity="1" />
+    <End Role="besleme" Type="Self.besleme" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mama">
+        <PropertyRef Name="mama_id" />
+      </Principal>
+      <Dependent Role="besleme">
+        <PropertyRef Name="mama_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_besleme_personel">
+    <End Role="personel" Type="Self.personel" Multiplicity="1" />
+    <End Role="besleme" Type="Self.besleme" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="personel">
+        <PropertyRef Name="tc_no" />
+      </Principal>
+      <Dependent Role="besleme">
+        <PropertyRef Name="personel_tc_no" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_hayvan_cikis_sebebi">
+    <End Role="cikis_sebebi" Type="Self.cikis_sebebi" Multiplicity="0..1" />
+    <End Role="hayvan" Type="Self.hayvan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cikis_sebebi">
+        <PropertyRef Name="cikis_sebebi_id" />
+      </Principal>
+      <Dependent Role="hayvan">
+        <PropertyRef Name="cikis_sebebi_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_hayvan_gelis_sebebi">
+    <End Role="gelis_sebebi" Type="Self.gelis_sebebi" Multiplicity="1" />
+    <End Role="hayvan" Type="Self.hayvan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gelis_sebebi">
+        <PropertyRef Name="gelis_sebebi_id" />
+      </Principal>
+      <Dependent Role="hayvan">
+        <PropertyRef Name="gelis_sebebi_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_hayvan_irk">
+    <End Role="irk" Type="Self.irk" Multiplicity="1" />
+    <End Role="hayvan" Type="Self.hayvan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="irk">
+        <PropertyRef Name="irk_id" />
+      </Principal>
+      <Dependent Role="hayvan">
+        <PropertyRef Name="ırk_ıd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_hayvan_tur">
+    <End Role="tur" Type="Self.tur" Multiplicity="1" />
+    <End Role="hayvan" Type="Self.hayvan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tur">
+        <PropertyRef Name="tur_id" />
+      </Principal>
+      <Dependent Role="hayvan">
+        <PropertyRef Name="tur_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_irk_tur">
+    <End Role="tur" Type="Self.tur" Multiplicity="1" />
+    <End Role="irk" Type="Self.irk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tur">
+        <PropertyRef Name="tur_id" />
+      </Principal>
+      <Dependent Role="irk">
+        <PropertyRef Name="tur_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_kullanici_personel">
+    <End Role="personel" Type="Self.personel" Multiplicity="1" />
+    <End Role="kullanici" Type="Self.kullanici" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="personel">
+        <PropertyRef Name="tc_no" />
+      </Principal>
+      <Dependent Role="kullanici">
+        <PropertyRef Name="tcNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mama_tur">
+    <End Role="tur" Type="Self.tur" Multiplicity="1" />
+    <End Role="mama" Type="Self.mama" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tur">
+        <PropertyRef Name="tur_id" />
+      </Principal>
+      <Dependent Role="mama">
+        <PropertyRef Name="tur_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_personel_meslek">
+    <End Role="meslek" Type="Self.meslek" Multiplicity="1" />
+    <End Role="personel" Type="Self.personel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="meslek">
+        <PropertyRef Name="meslek_id" />
+      </Principal>
+      <Dependent Role="personel">
+        <PropertyRef Name="meslek_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sahiplenme_hayvan">
+    <End Role="hayvan" Type="Self.hayvan" Multiplicity="1" />
+    <End Role="sahiplenme" Type="Self.sahiplenme" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hayvan">
+        <PropertyRef Name="kupe_no" />
+      </Principal>
+      <Dependent Role="sahiplenme">
+        <PropertyRef Name="kupe_no" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tedavi_hayvan">
+    <End Role="hayvan" Type="Self.hayvan" Multiplicity="1" />
+    <End Role="tedavi" Type="Self.tedavi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hayvan">
+        <PropertyRef Name="kupe_no" />
+      </Principal>
+      <Dependent Role="tedavi">
+        <PropertyRef Name="kupe_no" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tedavi_ilac">
+    <End Role="ilac" Type="Self.ilac" Multiplicity="0..1" />
+    <End Role="tedavi" Type="Self.tedavi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ilac">
+        <PropertyRef Name="ilac_id" />
+      </Principal>
+      <Dependent Role="tedavi">
+        <PropertyRef Name="ilac_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tedavi_personel">
+    <End Role="personel" Type="Self.personel" Multiplicity="1" />
+    <End Role="tedavi" Type="Self.tedavi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="personel">
+        <PropertyRef Name="tc_no" />
+      </Principal>
+      <Dependent Role="tedavi">
+        <PropertyRef Name="personel_tc_no" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="barinak_otomasyonModelStoreContainer">
+    <EntitySet Name="besleme" EntityType="Self.besleme" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cikis_sebebi" EntityType="Self.cikis_sebebi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="gelis_sebebi" EntityType="Self.gelis_sebebi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="hayvan" EntityType="Self.hayvan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ilac" EntityType="Self.ilac" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="irk" EntityType="Self.irk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kullanici" EntityType="Self.kullanici" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mama" EntityType="Self.mama" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mesaj" EntityType="Self.mesaj" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="meslek" EntityType="Self.meslek" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="personel" EntityType="Self.personel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sahiplenme" EntityType="Self.sahiplenme" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tedavi" EntityType="Self.tedavi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tur" EntityType="Self.tur" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="yonetici" EntityType="Self.yonetici" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_besleme_mama" Association="Self.FK_besleme_mama">
+      <End Role="mama" EntitySet="mama" />
+      <End Role="besleme" EntitySet="besleme" />
+    </AssociationSet>
+    <AssociationSet Name="FK_besleme_personel" Association="Self.FK_besleme_personel">
+      <End Role="personel" EntitySet="personel" />
+      <End Role="besleme" EntitySet="besleme" />
+    </AssociationSet>
+    <AssociationSet Name="FK_hayvan_cikis_sebebi" Association="Self.FK_hayvan_cikis_sebebi">
+      <End Role="cikis_sebebi" EntitySet="cikis_sebebi" />
+      <End Role="hayvan" EntitySet="hayvan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_hayvan_gelis_sebebi" Association="Self.FK_hayvan_gelis_sebebi">
+      <End Role="gelis_sebebi" EntitySet="gelis_sebebi" />
+      <End Role="hayvan" EntitySet="hayvan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_hayvan_irk" Association="Self.FK_hayvan_irk">
+      <End Role="irk" EntitySet="irk" />
+      <End Role="hayvan" EntitySet="hayvan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_hayvan_tur" Association="Self.FK_hayvan_tur">
+      <End Role="tur" EntitySet="tur" />
+      <End Role="hayvan" EntitySet="hayvan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_irk_tur" Association="Self.FK_irk_tur">
+      <End Role="tur" EntitySet="tur" />
+      <End Role="irk" EntitySet="irk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_kullanici_personel" Association="Self.FK_kullanici_personel">
+      <End Role="personel" EntitySet="personel" />
+      <End Role="kullanici" EntitySet="kullanici" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mama_tur" Association="Self.FK_mama_tur">
+      <End Role="tur" EntitySet="tur" />
+      <End Role="mama" EntitySet="mama" />
+    </AssociationSet>
+    <AssociationSet Name="FK_personel_meslek" Association="Self.FK_personel_meslek">
+      <End Role="meslek" EntitySet="meslek" />
+      <End Role="personel" EntitySet="personel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sahiplenme_hayvan" Association="Self.FK_sahiplenme_hayvan">
+      <End Role="hayvan" EntitySet="hayvan" />
+      <End Role="sahiplenme" EntitySet="sahiplenme" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tedavi_hayvan" Association="Self.FK_tedavi_hayvan">
+      <End Role="hayvan" EntitySet="hayvan" />
+      <End Role="tedavi" EntitySet="tedavi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tedavi_ilac" Association="Self.FK_tedavi_ilac">
+      <End Role="ilac" EntitySet="ilac" />
+      <End Role="tedavi" EntitySet="tedavi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tedavi_personel" Association="Self.FK_tedavi_personel">
+      <End Role="personel" EntitySet="personel" />
+      <End Role="tedavi" EntitySet="tedavi" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

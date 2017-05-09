@@ -1,0 +1,106 @@
+﻿@model bayosi.Models.hayvan
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>hayvan</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+           Hayvanın adı 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hayvan_ad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hayvan_resim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hayvan_resim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.barinak_gelis_tarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.barinak_gelis_tarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.barinak_cikis_tarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.barinak_cikis_tarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sahip_isim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sahip_isim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sahip_adress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sahip_adress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sahip_telno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sahip_telno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cikis_sebebi.cikis_sebebi1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cikis_sebebi.cikis_sebebi1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gelis_sebebi.gelis_sebebi1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gelis_sebebi.gelis_sebebi1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.irk.irk_adi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.irk.irk_adi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tur.tur_aciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tur.tur_aciklama)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.kupe_no }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

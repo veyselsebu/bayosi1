@@ -1,0 +1,81 @@
+﻿@model bayosi.Models.sahiplenme
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>detaylar</h2>
+
+<div>
+    <h4>sahiplenme</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.sahiplenen_tc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sahiplenen_tc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.soyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.soyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ev_tel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ev_tel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cep_tel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cep_tel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.adress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.adress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sahiplenme_tarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sahiplenme_tarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hayvan.hayvan_ad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hayvan.hayvan_ad)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("listeye geri dön", "Index")
+</p>

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<bayosi.Models.tedavi>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>tedavi listesi</h2>
+
+<p>
+    @Html.ActionLink("yeni kayıt ekle", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.doz)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.aciklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hayvan.hayvan_ad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ilac.ilac_ad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.personel.isim)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.doz)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.aciklama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hayvan.hayvan_ad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ilac.ilac_ad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.personel.isim)
+            @Html.DisplayFor(modelItem=>item.personel.soyisim)
+        </td>
+        <td>
+            @Html.ActionLink("düzenle", "Edit", new { id=item.tedavi_id }) |
+            @Html.ActionLink("detaylar", "Details", new { id=item.tedavi_id }) |
+            @Html.ActionLink("sil", "Delete", new { id=item.tedavi_id })
+        </td>
+    </tr>
+}
+
+</table>

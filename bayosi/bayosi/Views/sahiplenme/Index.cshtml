@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>liste</h2>
+
+@model IEnumerable<bayosi.Models.sahiplenme>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>sahiplendirme</h2>
+
+<p>
+    @Html.ActionLink("yeni kayıt ekle", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            sahiplenen T.C No
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.soyad)
+        </th>
+        <th>
+            tarih
+        </th>
+        <th>
+            hayvan adı
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.sahiplenen_tc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.soyad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sahiplenme_tarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hayvan.hayvan_ad)
+            </td>
+            <td>
+                @Html.ActionLink("düzenle", "Edit", new { id = item.sahiplenme_id }) |
+                @Html.ActionLink("detay", "Details", new { id = item.sahiplenme_id }) |
+                @Html.ActionLink("sil", "Delete", new { id = item.sahiplenme_id })
+            </td>
+        </tr>
+    }
+
+</table>

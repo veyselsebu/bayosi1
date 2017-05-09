@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="barinak_otomasyonModelStoreContainer" CdmEntityContainer="barinak_otomasyonEntities3">
+    <EntitySetMapping Name="besleme">
+      <EntityTypeMapping TypeName="barinak_otomasyonModel.besleme">
+        <MappingFragment StoreEntitySet="besleme">
+          <ScalarProperty Name="besleme_id" ColumnName="besleme_id" />
+          <ScalarProperty Name="personel_tc_no" ColumnName="personel_tc_no" />
+          <ScalarProperty Name="mama_id" ColumnName="mama_id" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="mama_miktarı" ColumnName="mama_miktarı" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cikis_sebebi">
+      <EntityTypeMapping TypeName="barinak_otomasyonModel.cikis_sebebi">
+        <MappingFragment StoreEntitySet="cikis_sebebi">
+          <ScalarProperty Name="cikis_sebebi_id" ColumnName="cikis_sebebi_id" />
+          <ScalarProperty Name="cikis_sebebi1" ColumnName="cikis_sebebi" />
+          <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gelis_sebebi">
+      <EntityTypeMapping TypeName="barinak_otomasyonModel.gelis_sebebi">
+        <MappingFragment StoreEntitySet="gelis_sebebi">
+          <ScalarProperty Name="gelis_sebebi_id" ColumnName="gelis_sebebi_id" />
+          <ScalarProperty Name="gelis_sebebi1" ColumnName="gelis_sebebi" />
+          <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hayvan">
+      <EntityTypeMapping TypeName="barinak_otomasyonModel.hayvan">
+        <MappingFragment StoreEntitySet="hayvan">
+          <ScalarProperty Name="kupe_no" ColumnName="kupe_no" />
+          <ScalarProperty Name="tur_id" ColumnName="tur_id" />
+          <ScalarProperty Name="ırk_ıd" ColumnName="ırk_ıd" />
+          <ScalarProperty Name="gelis_sebebi_id" ColumnName="gelis_sebebi_id" />
+          <ScalarProperty Name="cikis_sebebi_id" ColumnName="cikis_sebebi_id" />
+          <ScalarProperty Name="hayvan_ad" ColumnName="hayvan_ad" />
+          <ScalarProperty Name="hayvan_resim" ColumnName="hayvan_resim" />
+          <ScalarProperty Name="barinak_gelis_tarihi" ColumnName="barinak_gelis_tarihi" />
+          <ScalarProperty Name="barinak_cikis_tarihi" ColumnName="barinak_cikis_tarihi" />
+          <ScalarProperty Name="sahip_isim" ColumnName="sahip_isim" />
+          <ScalarProperty Name="sahip_adress" ColumnName="sahip_adress" />
+          <ScalarProperty Name="sahip_telno" ColumnName="sahip_telno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ilac">
+      <EntityTypeMapping TypeName="barinak_otomasyonModel.ilac">
+        <MappingFragment StoreEntitySet="ilac">
+          <ScalarProperty Name="ilac_id" ColumnName="ilac_id" />
+          <ScalarProperty Name="ilac_ad" ColumnName="ilac_ad" />
+          <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="irk">
+      <EntityTypeMapping TypeName="barinak_otomasyonModel.irk">
+        <MappingFragment StoreEntitySet="irk">
+          <ScalarProperty Name="irk_id" ColumnName="irk_id" />
+          <ScalarProperty Name="irk_adi" ColumnName="irk_adi" />
+          <ScalarProperty Name="tur_id" ColumnName="tur_id" />
+          <ScalarProperty Name="irk_aciklama" ColumnName="irk_aciklama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kullanici">
+      <EntityTypeMapping TypeName="barinak_otomasyonModel.kullanici">
+        <MappingFragment StoreEntitySet="kullanici">
+          <ScalarProperty Name="kullaniciAdi" ColumnName="kullaniciAdi" />
+          <ScalarProperty Name="parola" ColumnName="parola" />
+          <ScalarProperty Name="tcNo" ColumnName="tcNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mama">
+      <EntityTypeMapping TypeName="barinak_otomasyonModel.mama">
+        <MappingFragment StoreEntitySet="mama">
+          <ScalarProperty Name="mama_id" ColumnName="mama_id" />
+          <ScalarProperty Name="mama_adi" ColumnName="mama_adi" />
+          <ScalarProperty Name="tur_id" ColumnName="tur_id" />
+          <ScalarProperty Name="marka" ColumnName="marka" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mesaj">
+      <EntityTypeMapping TypeName="barinak_otomasyonModel.mesaj">
+        <MappingFragment StoreEntitySet="mesaj">
+          <ScalarProperty Name="mesaj_id" ColumnName="mesaj_id" />
+          <ScalarProperty Name="mesaj_baslik" ColumnName="mesaj_baslik" />
+          <ScalarProperty Name="icerik" ColumnName="icerik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="meslek">
+      <EntityTypeMapping TypeName="barinak_otomasyonModel.meslek">
+        <MappingFragment StoreEntitySet="meslek">
+          <ScalarProperty Name="meslek_id" ColumnName="meslek_id" />
+          <ScalarProperty Name="meslek_adi" ColumnName="meslek_adi" />
+          <ScalarProperty Name="meslek_açiklama" ColumnName="meslek_açiklama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="personel">
+      <EntityTypeMapping TypeName="barinak_otomasyonModel.personel">
+        <MappingFragment StoreEntitySet="personel">
+          <ScalarProperty Name="tc_no" ColumnName="tc_no" />
+          <ScalarProperty Name="isim" ColumnName="isim" />
+          <ScalarProperty Name="soyisim" ColumnName="soyisim" />
+          <ScalarProperty Name="tel_no" ColumnName="tel_no" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="meslek_id" ColumnName="meslek_id" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sahiplenme">
+      <EntityTypeMapping TypeName="barinak_otomasyonModel.sahiplenme">
+        <MappingFragment StoreEntitySet="sahiplenme">
+          <ScalarProperty Name="sahiplenme_id" ColumnName="sahiplenme_id" />
+          <ScalarProperty Name="kupe_no" ColumnName="kupe_no" />
+          <ScalarProperty Name="sahiplenen_tc" ColumnName="sahiplenen_tc" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="ev_tel" ColumnName="ev_tel" />
+          <ScalarProperty Name="cep_tel" ColumnName="cep_tel" />
+          <ScalarProperty Name="adress" ColumnName="adress" />
+          <ScalarProperty Name="sahiplenme_tarihi" ColumnName="sahiplenme_tarihi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="barinak_otomasyonModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tedavi">
+      <EntityTypeMapping TypeName="barinak_otomasyonModel.tedavi">
+        <MappingFragment StoreEntitySet="tedavi">
+          <ScalarProperty Name="tedavi_id" ColumnName="tedavi_id" />
+          <ScalarProperty Name="kupe_no" ColumnName="kupe_no" />
+          <ScalarProperty Name="personel_tc_no" ColumnName="personel_tc_no" />
+          <ScalarProperty Name="ilac_id" ColumnName="ilac_id" />
+          <ScalarProperty Name="doz" ColumnName="doz" />
+          <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tur">
+      <EntityTypeMapping TypeName="barinak_otomasyonModel.tur">
+        <MappingFragment StoreEntitySet="tur">
+          <ScalarProperty Name="tur_id" ColumnName="tur_id" />
+          <ScalarProperty Name="tur_aciklama" ColumnName="tur_aciklama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="yonetici">
+      <EntityTypeMapping TypeName="barinak_otomasyonModel.yonetici">
+        <MappingFragment StoreEntitySet="yonetici">
+          <ScalarProperty Name="yoneticiAd" ColumnName="yoneticiAd" />
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

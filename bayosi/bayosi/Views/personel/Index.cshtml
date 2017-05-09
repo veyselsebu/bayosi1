@@ -1,0 +1,67 @@
+﻿@model IEnumerable<bayosi.Models.personel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("personel ekle", "Create")
+</p>
+
+<p><a href="~/kullanici/index" class="btn btn-primary btn-large">kullanici işlemleri &raquo;</a></p>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.isim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.soyisim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tel_no)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.adres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.resim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.meslek.meslek_adi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.isim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.soyisim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tel_no)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.adres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.resim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.meslek.meslek_adi)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.tc_no }) |
+            @Html.ActionLink("Details", "Details", new { id=item.tc_no }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.tc_no })
+        </td>
+    </tr>
+}
+
+</table>

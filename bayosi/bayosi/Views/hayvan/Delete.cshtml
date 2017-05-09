@@ -1,0 +1,112 @@
+﻿@model bayosi.Models.hayvan
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>hayvan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.hayvan_ad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hayvan_ad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hayvan_resim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hayvan_resim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.barinak_gelis_tarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.barinak_gelis_tarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.barinak_cikis_tarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.barinak_cikis_tarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sahip_isim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sahip_isim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sahip_adress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sahip_adress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sahip_telno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sahip_telno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cikis_sebebi.cikis_sebebi1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cikis_sebebi.cikis_sebebi1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gelis_sebebi.gelis_sebebi1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gelis_sebebi.gelis_sebebi1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.irk.irk_adi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.irk.irk_adi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tur.tur_aciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tur.tur_aciklama)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

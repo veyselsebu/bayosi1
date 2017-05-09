@@ -1,0 +1,93 @@
+﻿@model bayosi.Models.sahiplenme
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>düzenle</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>sahiplenme</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.sahiplenme_id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.kupe_no, "kupe_no", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("kupe_no", String.Empty)
+                @Html.ValidationMessageFor(model => model.kupe_no)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.sahiplenen_tc, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.sahiplenen_tc)
+                @Html.ValidationMessageFor(model => model.sahiplenen_tc)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ad, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ad)
+                @Html.ValidationMessageFor(model => model.ad)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.soyad, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.soyad)
+                @Html.ValidationMessageFor(model => model.soyad)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ev_tel, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ev_tel)
+                @Html.ValidationMessageFor(model => model.ev_tel)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.cep_tel, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.cep_tel)
+                @Html.ValidationMessageFor(model => model.cep_tel)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.adress, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.adress)
+                @Html.ValidationMessageFor(model => model.adress)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.sahiplenme_tarihi, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.sahiplenme_tarihi)
+                @Html.ValidationMessageFor(model => model.sahiplenme_tarihi)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="kaydet" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("listeye geri dön", "Index")
+</div>

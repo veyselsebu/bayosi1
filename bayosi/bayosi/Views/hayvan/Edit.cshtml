@@ -1,0 +1,117 @@
+﻿@model bayosi.Models.hayvan
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>hayvan</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.kupe_no)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.tur_id, "tur_id", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("tur_id", String.Empty)
+                @Html.ValidationMessageFor(model => model.tur_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ırk_ıd, "ırk_ıd", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ırk_ıd", String.Empty)
+                @Html.ValidationMessageFor(model => model.ırk_ıd)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.gelis_sebebi_id, "gelis_sebebi_id", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("gelis_sebebi_id", String.Empty)
+                @Html.ValidationMessageFor(model => model.gelis_sebebi_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.cikis_sebebi_id, "cikis_sebebi_id", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("cikis_sebebi_id", String.Empty)
+                @Html.ValidationMessageFor(model => model.cikis_sebebi_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.hayvan_ad, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.hayvan_ad)
+                @Html.ValidationMessageFor(model => model.hayvan_ad)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.hayvan_resim, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.hayvan_resim)
+                @Html.ValidationMessageFor(model => model.hayvan_resim)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.barinak_gelis_tarihi, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.barinak_gelis_tarihi)
+                @Html.ValidationMessageFor(model => model.barinak_gelis_tarihi)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.barinak_cikis_tarihi, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.barinak_cikis_tarihi)
+                @Html.ValidationMessageFor(model => model.barinak_cikis_tarihi)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.sahip_isim, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.sahip_isim)
+                @Html.ValidationMessageFor(model => model.sahip_isim)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.sahip_adress, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.sahip_adress)
+                @Html.ValidationMessageFor(model => model.sahip_adress)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.sahip_telno, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.sahip_telno)
+                @Html.ValidationMessageFor(model => model.sahip_telno)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -1,0 +1,34 @@
+﻿@model bayosi.Models.kullanici
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>kullanici</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.parola)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.parola)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.personel.isim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.personel.isim)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.kullaniciAdi }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

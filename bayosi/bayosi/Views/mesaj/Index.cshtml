@@ -1,0 +1,27 @@
+﻿@model IEnumerable<bayosi.Models.mesaj>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>mesajlar</h2>
+
+
+<table class="table">
+    
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.mesaj_baslik)
+        </td>
+      
+        <td>
+           
+            @Html.ActionLink("mesajı gör...", "Details", new { id=item.mesaj_id }) |
+            
+        </td>
+  </tr>
+}
+
+</table>

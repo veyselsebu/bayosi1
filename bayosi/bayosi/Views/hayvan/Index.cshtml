@@ -1,0 +1,83 @@
+﻿@model IEnumerable<bayosi.Models.hayvan>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-hover">
+    <tr>
+        <th>
+            Küpe no:
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hayvan_ad)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.barinak_gelis_tarihi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.barinak_cikis_tarihi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sahip_isim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cikis_sebebi.cikis_sebebi1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gelis_sebebi.gelis_sebebi1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.irk.irk_adi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tur.tur_aciklama)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.kupe_no)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hayvan_ad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.barinak_gelis_tarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.barinak_cikis_tarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sahip_isim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cikis_sebebi.cikis_sebebi1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gelis_sebebi.gelis_sebebi1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.irk.irk_adi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tur.tur_aciklama)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.kupe_no }) |
+                @Html.ActionLink("Details", "Details", new { id = item.kupe_no }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.kupe_no })
+            </td>
+        </tr>
+    }
+
+</table>

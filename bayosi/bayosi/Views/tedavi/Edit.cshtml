@@ -1,0 +1,69 @@
+﻿@model bayosi.Models.tedavi
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>düzenleme</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>tedavi</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.tedavi_id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.kupe_no, "kupe_no", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("kupe_no", String.Empty)
+                @Html.ValidationMessageFor(model => model.kupe_no)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.personel_tc_no, "personel_tc_no", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("personel_tc_no", String.Empty)
+                @Html.ValidationMessageFor(model => model.personel_tc_no)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ilac_id, "ilac_id", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ilac_id", String.Empty)
+                @Html.ValidationMessageFor(model => model.ilac_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.doz, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.doz)
+                @Html.ValidationMessageFor(model => model.doz)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.aciklama, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.aciklama)
+                @Html.ValidationMessageFor(model => model.aciklama)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="kaydet" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("listeye geri dön", "Index")
+</div>
